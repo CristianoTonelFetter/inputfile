@@ -1,20 +1,23 @@
 # inputfile
-JQuery plugin for custom input file. 
- --
+<div>
+    JQuery plugin for custom input file. 
+</div>
 
+<div>
 Install:
 
 Bower 
 
 $ bower install jquery-inputfile
 
---
+</div>
 
+<div>
 Usage: 
 
 HTML:
 
-<div id="myelement"></div>
+&lt;div id="myelement"&gt;&lt;/div&gt;
 
 Javascript:
 
@@ -26,3 +29,5 @@ $("#myelement").inputfile({
     customOffset: { top: 0, left: 0 }, 
     onChange: function(){}
 });
+
+</div>
