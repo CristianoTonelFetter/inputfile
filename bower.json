@@ -1,0 +1,24 @@
+{
+  "name": "jquery-inputfile",
+  "homepage": "https://github.com/CristianoTonelFetter/inputfile",
+  "authors": [
+    "Cristiano T. fetter <cristiano@fdd.com.br>"
+  ],
+  "description": "JQuery plugin for custom input file.",
+  "main": "jquery.inputfile.js",
+  "moduleType": [],
+  "keywords": [
+    "custom",
+    "input",
+    "file",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
