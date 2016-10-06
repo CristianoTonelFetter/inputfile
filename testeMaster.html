@@ -1,0 +1,16 @@
+<script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() { alert(this.status)
+        if (this.readyState == 4 && this.status == 200) {
+            var contents = this.responseText;
+            if (contents.toLowerCase().indexOf("master") > -1)
+            {
+                console.log = "=========== !!!! BRANCH MASTER CUIDADO !!!! ===========";
+            }
+        }
+    };
+    xhttp.open("GET", "../.git/HEAD", true);
+    xhttp.send();
+</script>
+
+<div id="result"></div>

@@ -16,7 +16,8 @@
 
         var defaults = {
             customOffset: null, //{ top: 0, left: 0 }
-            onChange: function () { }
+            onChange: function (filePath, inputElement) { }, 
+            name: "inputfile"
         };
 
         return this.each(function () {
@@ -29,7 +30,7 @@
                 newInputFileLabel = self;
 
             //self.append(newInputFileLabel);
-            self.attr("name", self.attr("name") + "_placeholder")
+            self.addClass((!!self.attr("name") ? self.attr("name") : options.name)  + "_placeholder")
 
             //newInputFile.attr("name", self.attr("name"));
 
@@ -61,18 +62,13 @@
             });
 
             newInputFile.bind("change mouseenter mouseleave", function (e) {
-
+                var $element = $(this); 
+                var label = $element.val().replace("fakepath", "...");
                 switch (e.type) {
                     case "change":
                         if (newInputFile.val().length > 0) {
-                            newInputFileLabel.val(
-                                //"<strong>Arquivo: </strong>" + 
-                                newInputFile.val().replace("fakepath", "...")
-                            );
+                            newInputFileLabel.val(label);
                         } else {
-							/*newInputFileLabel.html(
-								"<b>" + options.placeholder + "</b>"
-							);*/
                             newInputFileLabel.val('');
                         }
                         break;
@@ -83,7 +79,7 @@
                 }
 
                 if (e.type == "change") {
-                    options.onChange();
+                    options.onChange($element.val(), $element);
                 }
 
             });
